@@ -22,7 +22,8 @@ class StepController extends Controller
             $user->email = $dateTime->getTimestamp() . rand(1, 1000) . "@gimnazija.net";
             $user->save();
         }
-
+        $user->name = $request->name;
+        $user->save();
 
         $steps = Step::where('user_id', $user->id)
             ->whereDate('created_at', Carbon::today())
