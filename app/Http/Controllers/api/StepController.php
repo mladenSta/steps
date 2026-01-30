@@ -26,9 +26,9 @@ class StepController extends Controller
         $user->name = $request->name;
         $user->save();
 
-        Log::info($request->name);
-        Log::info($request->device_id);
-        Log::info($request->amount);
+        //Log::info($request->name);
+        //Log::info($request->device_id);
+        //Log::info($request->amount);
 
         $steps = Step::where('user_id', $user->id)
             ->whereDate('created_at', Carbon::today())
